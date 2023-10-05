@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./toggle.module.css";
+import s from "./authLink.module.css";
 
 const AuthLink = () => {
     return (
