@@ -1,10 +1,20 @@
 import React from "react";
 import s from "./authLink.module.css";
+import Link from "next/link";
 
 const AuthLink = () => {
+
+    const status = "notauthenticated"
     return (
-        <div className={s.container}></div>
+        <>
+            {status==="notauthenticated" ? (<Link href={"/login"}>Login</Link>) : (
+                <>
+                    <Link href={"/write"}>Write</Link>
+                    <span className={s.link}>Logout</span>
+                </>
+            )}
+        </>
     )
 }
 
-export default Toggle;
+export default AuthLink;
