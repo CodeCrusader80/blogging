@@ -10,10 +10,17 @@ const Toggle = () => {
 
 
     return (
-        <div className={s.container} onClick={toggle}>
-            <Image className={s.moon} src={"/moon.png"} alt={"lune"} width={12} height={12}/>
-            <div className={s.ball}></div>
-            <Image src={"/sun.png"} alt={"soleil"} width={14} height={14}/>
+        <div className={s.container} onClick={toggle} style={
+            theme === "dark" ? {background: "white"} : {background: "#0F172A"}
+            }
+        >
+            <Image src={"/moon.svg"} alt={"lune"} width={14} height={14} style={{left: 5}}/>
+            <div className={s.ball}
+                 style=
+                     {theme === "dark" ? {left:1, background:"#0F172A"} : {right:1, background:"white"}
+            }>
+            </div>
+            <Image src={"/sun.svg"} alt={"soleil"} width={14} height={14}/>
         </div>
     )
 }
