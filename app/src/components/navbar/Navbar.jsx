@@ -16,9 +16,9 @@ const Navbar = () => {
             <div className={s.logo}>Blogging</div>
             <div className={s.links}>
                 <Toggle/>
-                <Link href={"/"}>Home</Link>
-                <Link href={"/"}>Contact</Link>
-                <Link href={"/"}>About</Link>
+                <Link href={"/"} className={s.link}>Home</Link>
+                <Link href={"/"} className={s.link}>Contact</Link>
+                <Link href={"/"} className={s.link}>About</Link>
                 <AuthLink/>
             </div>
         </div>
