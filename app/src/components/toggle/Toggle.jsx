@@ -6,11 +6,11 @@ import {ThemeContext} from "@/app/src/context/ThemeContext";
 
 const Toggle = () => {
 
-    const {theme} = useContext(ThemeContext)
-    
+    const {toggle, theme} = useContext(ThemeContext)
+
 
     return (
-        <div className={s.container}>
+        <div className={s.container} onClick={toggle}>
             <Image className={s.moon} src={"/moon.png"} alt={"lune"} width={12} height={12}/>
             <div className={s.ball}></div>
             <Image src={"/sun.png"} alt={"soleil"} width={14} height={14}/>
