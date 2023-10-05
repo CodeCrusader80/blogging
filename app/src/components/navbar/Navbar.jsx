@@ -10,8 +10,12 @@ const Navbar = () => {
                 <Image src={"/twitter-x-logo.svg"} alt={"Twitter logo"} width={22} height={22}/>
                 <Image src={"/youtube.svg"} alt={"facebook logo"} width={25} height={25}/>
             </div>
-            <div className={s.logo}></div>
-            <div className={s.links}></div>
+            <div className={s.logo}>BloGGing</div>
+            <div className={s.links}>
+                <Link href={"/"}>Home</Link>
+                <Link href={"/"}>Contact</Link>
+                <Link href={"/"}>About</Link>
+            </div>
         </div>
     )
 }
