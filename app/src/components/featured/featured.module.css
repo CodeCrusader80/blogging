@@ -48,10 +48,10 @@
 
 @media screen and (max-width: 780px) {
     .post {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .imgContainer{
-       order: -1;
+
     }
     .image {
         width: 100%;
