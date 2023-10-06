@@ -21,6 +21,7 @@
 .image {
     object-fit: cover;
     width: 100%;
+    border-radius: 10px;
 }
 .txtContainer {
     flex: 1;
@@ -55,5 +56,15 @@
     .image {
         width: 100%;
         height: auto;
+    }
+    .button {
+        padding: 13px 15px;
+    }
+    .post {
+        margin-top: 30px;
+        gap: 25px;
+    }
+    .title {
+        font-size: 35px;
     }
 }
