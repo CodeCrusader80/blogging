@@ -8,7 +8,7 @@ const Featured = () => {
             </h1>
             <div className={s.post}>
                 <div className={s.imgContainer}>
-                    
+
                 </div>
                 <div className={s.txtContainer}></div>
             </div>
