@@ -5,7 +5,7 @@ import Image from "next/image";
 const CategoryList = () => {
     return(
         <div className={s.container}>
-            <h1>Popular Categories</h1>
+            <h1 className={s.title}>Popular Categories</h1>
             <div className={s.categories}>
                 <Link href={"/bolg?cat=style"} className={`${s.category} ${s.style}`}>
                     <Image src={"/lifestyle.png"} alt={"illustration style"} width={32} height={32} className={s.image}></Image>
@@ -29,7 +29,7 @@ const CategoryList = () => {
                 </Link>
                 <Link href={"/bolg?cat=programming"} className={`${s.category} ${s.programming}`}>
                     <Image src={"/programming.png"} alt={"illustration style"} width={32} height={32} className={s.image}></Image>
-                    Programming
+                    Code
                 </Link>
             </div>
         </div>
