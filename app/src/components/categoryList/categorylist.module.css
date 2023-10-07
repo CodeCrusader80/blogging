@@ -26,7 +26,7 @@
     background-color: #57C4FF31;
 }
 .category.fashion {
-    background-color: #ADD8E6;
+    background-color: #000000;
     color: #FFFF;
 }
 .category.culture {
@@ -34,7 +34,7 @@
     color: #F0F0F0;
 }
 .category.food {
-    background-color: #FFD700;
+    background-color: #8B0000;
     color: #FFFF;
 }
 .category.travel {
