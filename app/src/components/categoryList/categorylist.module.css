@@ -8,7 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .category {
@@ -19,7 +19,7 @@
     height: 60px;
     justify-content: center;
     border-radius: 5px;
-    width: 120px;
+    width: 15%;
 }
 
 .category.style {
@@ -48,4 +48,25 @@
 
 .image {
     border-radius: 50%;
+}
+
+@media screen and (max-width: 1280px) {
+    .category{
+        width: 20%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .category{
+        width: 25%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .category{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .category{
+        width: 100%;
+    }
 }
