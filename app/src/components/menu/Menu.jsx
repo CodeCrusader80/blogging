@@ -10,7 +10,7 @@ const Menu = () => {
             <div className={s.items}>
                 <Link href={"/"} className={s.item}>
                     <div className={s.imgContainer}>
-                        <Image src={"/p3.png"} alt={"highly detailed female droid"} width={200} height={150}/>
+                        <Image src={"/p3.png"} alt={"highly detailed female droid"} width={300} height={180}/>
                     </div>
                     <div className={s.txtContainer}>
 
