@@ -69,6 +69,16 @@ const Menu = () => {
                     </div>
                 </Link>
             </div>
+            <h2 className={s.subtitle}>Discover by topic</h2>
+            <h1 className={s.title}>Categories</h1>
+            <div className={s.categoryList}>
+                <Link href={"/blog?cat=style"} className={`${s.categoryItems} ${s.style}`}>Style</Link>
+                <Link href={"/blog?cat=fashion"} className={`${s.categoryItems} ${s.fashion}`}>Fashion</Link>
+                <Link href={"/blog?cat=culture"} className={`${s.categoryItems} ${s.culture}`}>Culture</Link>
+                <Link href={"/blog?cat=food"} className={`${s.categoryItems} ${s.food}`}>Food</Link>
+                <Link href={"/blog?cat=travel"} className={`${s.categoryItems} ${s.travel}`}>Travel</Link>
+                <Link href={"/blog?cat=code"} className={`${s.categoryItems} ${s.code}`}>Code</Link>
+            </div>
         </div>
     )
 }

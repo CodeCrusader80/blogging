@@ -1,9 +1,12 @@
 .container {
     flex: 2;
     margin-top: 60px;
+    position: sticky;
+    top: -70px;
+    height: 100%;
 }
 .subtitle {
-    color: gray;
+    color: rgb(128, 128, 128);
     font-size: 16px;
     font-weight: 400;
 }
@@ -63,10 +66,31 @@
 .code {
     background-color: #FFA500;
 }
+.culture {
+    background-color: #008001;
+}
+.food {
+    background-color: #8B0000;
+}
 .details {
     font-size: 12px;
 }
 .date{
     padding: 2px 2px;
     color: var(--textColor);
+}
+
+.categoryList {
+    margin-top: 35px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.categoryItems {
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: white;
+    font-weight: 300;
 }
