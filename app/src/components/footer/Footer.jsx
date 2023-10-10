@@ -27,6 +27,20 @@ const Footer = () => {
                     <Link href={"/"}>About</Link>
                     <Link href={"/"}>Contact</Link>
                 </div>
+                <div className={s.list}>
+                    <span className={s.listTitle}>Tags</span>
+                    <Link href={"/"}>Style</Link>
+                    <Link href={"/"}>Fashion</Link>
+                    <Link href={"/"}>Code</Link>
+                    <Link href={"/"}>Travel</Link>
+                </div>
+                <div className={s.list}>
+                    <span className={s.listTitle}>Social</span>
+                    <Link href={"/"}>Facebook</Link>
+                    <Link href={"/"}>LinkedIn</Link>
+                    <Link href={"/"}>Twitter</Link>
+                    <Link href={"/"}>YouTube</Link>
+                </div>
             </div>
         </div>
     )
