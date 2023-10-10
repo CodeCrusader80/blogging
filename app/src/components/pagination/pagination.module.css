@@ -8,5 +8,6 @@
     padding: 16px;
     background-color: crimson;
     color: white;
+    font-weight: bold;
     cursor: pointer;
 }
