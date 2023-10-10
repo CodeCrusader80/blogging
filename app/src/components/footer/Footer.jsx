@@ -8,7 +8,7 @@ const Footer = () => {
         <div className={s.container}>
             <div className={s.info}>
                 <div className={s.logo}>
-                    <Image src={"/logo.png"} alt={"logo"} width={50} height={50}></Image>
+                    <Image src={"/logo.png"} alt={"logo"} width={60} height={60} className={s.imgLogo}></Image>
                     <h1 className={s.logoTxt}>Blogging</h1>
                 </div>
                 <p className={s.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet consequuntur cupiditate exercitationem harum laboriosam perspiciatis praesentium sequi ut veritatis?</p>
