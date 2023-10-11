@@ -6,9 +6,20 @@ const SinglePage = () => {
     return (
         <div className={s.container}>
             <div className={s.infoContainer}>
-                <div className={s.txtContainer}></div>
+                <div className={s.txtContainer}>
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                    <div className={s.user}>
+                        <div className={s.userImgContainer}>
+                            <Image src={"/p2.png"} alt={""} fill={true}/>
+                        </div>
+                        <div className={s.userTxtContainer}>
+                            <span className={s.username}>John Doe</span>
+                            <span className={s.date}>11/10/2023</span>
+                        </div>
+                    </div>
+                </div>
                 <div className={s.imgContainer}>
-                    <Image src={""} alt={""} fill={true} className={s.img}/>
+                    <Image src={"/p3.png"} alt={""} fill={true} className={s.img}/>
                 </div>
             </div>
             <div className={s.content}>
