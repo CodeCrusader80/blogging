@@ -1,7 +1,32 @@
 .container {
-
 }
 
 .infoContainer {
-    
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.txtContainer {
+    flex: 1;
+}
+
+.imgContainer {
+    flex: 1;
+    height: 350px;
+    position: relative;
+}
+.userImgContainer {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.userImg {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.img {
+    object-fit: cover;
 }

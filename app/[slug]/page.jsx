@@ -10,7 +10,7 @@ const SinglePage = () => {
                     <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
                     <div className={s.user}>
                         <div className={s.userImgContainer}>
-                            <Image src={"/p2.png"} alt={""} fill={true}/>
+                            <Image src={"/p2.png"} alt={""} fill className={s.userImg}/>
                         </div>
                         <div className={s.userTxtContainer}>
                             <span className={s.username}>John Doe</span>
@@ -19,7 +19,7 @@ const SinglePage = () => {
                     </div>
                 </div>
                 <div className={s.imgContainer}>
-                    <Image src={"/p3.png"} alt={""} fill={true} className={s.img}/>
+                    <Image src={"/p3.png"} alt={""} fill className={s.img}/>
                 </div>
             </div>
             <div className={s.content}>
