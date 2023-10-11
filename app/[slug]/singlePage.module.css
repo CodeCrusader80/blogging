@@ -21,7 +21,10 @@
     height: 60px;
     position: relative;
 }
-
+.title {
+    font-size: 64px;
+    margin-bottom: 50px;
+}
 .userImg {
     object-fit: cover;
     border-radius: 50%;
@@ -29,4 +32,29 @@
 
 .img {
     object-fit: cover;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.username {
+    font-size: 18px;
+    font-weight: bold;
+}
+.userTxtContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--softTextColor);
+}
+
+.content {
+    display: flex;
+    gap: 50px;
+}
+
+.post {
+
 }
