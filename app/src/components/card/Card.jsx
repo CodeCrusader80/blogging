@@ -13,7 +13,7 @@ const Card = () => {
                     <span className={s.date}>09/10/2023 - </span>
                     <span className={s.cat}>Code</span>
                 </div>
-                <Link href={"/"}>
+                <Link href={"/page"}>
                 <h1 className={s.title}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
                 </Link>
                 <p className={s.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque delectus, deserunt illo porro tenetur...</p>

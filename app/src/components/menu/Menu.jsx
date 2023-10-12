@@ -8,7 +8,7 @@ const Menu = () => {
             <h2 className={s.subtitle}>{"What's hot ?"}</h2>
             <h1 className={s.title}>Most Popular</h1>
             <div className={s.items}>
-                <Link href={"/"} className={s.item}>
+                <Link href={"/page"} className={s.item}>
                     <div className={s.imgContainer}>
                         <Image src={"/p3.png"} alt={"highly detailed female droid"} fill={true} className={s.img}/>
                     </div>
@@ -23,7 +23,7 @@ const Menu = () => {
                         </div>
                     </div>
                 </Link>
-                <Link href={"/"} className={s.item}>
+                <Link href={"/page"} className={s.item}>
                     <div className={s.imgContainer}>
                         <Image src={"/p3.png"} alt={"highly detailed female droid"} fill={true} className={s.img}/>
                     </div>
@@ -38,7 +38,7 @@ const Menu = () => {
                         </div>
                     </div>
                 </Link>
-                <Link href={"/"} className={s.item}>
+                <Link href={"/page"} className={s.item}>
                     <div className={s.imgContainer}>
                         <Image src={"/p3.png"} alt={"highly detailed female droid"} fill={true} className={s.img}/>
                     </div>
@@ -53,7 +53,7 @@ const Menu = () => {
                         </div>
                     </div>
                 </Link>
-                <Link href={"/"} className={s.item}>
+                <Link href={"/page"} className={s.item}>
                     <div className={s.imgContainer}>
                         <Image src={"/p3.png"} alt={"highly detailed female droid"} fill={true} className={s.img}/>
                     </div>
