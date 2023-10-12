@@ -1,6 +1,7 @@
 import s from "./singlePage.module.css";
 import Menu from "@/app/src/components/menu/Menu";
 import Image from "next/image";
+import Comments from "@/app/src/components/comments/Comments";
 
 const SinglePage = () => {
     return (
@@ -28,6 +29,9 @@ const SinglePage = () => {
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut culpa cupiditate dolore doloremque earum eos esse harum hic in inventore, odit quasi quidem quis quod similique veniam veritatis vero!</p>
                         <h5>Lorem ipsum dolor.</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eligendi officia porro quia ullam! Deleniti doloribus facere neque quia quibusdam quidem quo vel veniam voluptatum. Amet atque esse ex excepturi exercitationem explicabo, impedit in numquam odit perferendis quidem repellendus tenetur.</p>
+                    </div>
+                    <div className={s.comment}>
+                        <Comments/>
                     </div>
                 </div>
                 <Menu/>
