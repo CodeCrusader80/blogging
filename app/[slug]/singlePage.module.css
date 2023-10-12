@@ -56,5 +56,8 @@
 }
 
 .post {
-
+    margin-top: 60px;
+}
+.description{
+    flex: 5;
 }
