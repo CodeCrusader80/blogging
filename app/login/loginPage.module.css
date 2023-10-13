@@ -36,16 +36,16 @@
 
 @media screen and (max-width: 768px){
     .wrapper{
-        padding: 50px 200px;
+        padding: 50px 100px;
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 680px){
     .wrapper{
-        padding: 30px;
+        padding: 50px;
     }
     .socialButton {
         font-weight: 400;
-        font-size: 14px;
+        font-size: 15px;
     }
 }
