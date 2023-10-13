@@ -1,3 +1,5 @@
+'use client'
+
 import s from "./writePage.module.css";
 import Image from "next/image";
 import {useState} from "react";
@@ -13,13 +15,13 @@ const WritePage = () => {
                   <Image src={"/plus-circle.svg"} alt={"add content"} width={16} height={16}/>
               </button>
                {open && <div className={s.add}>
-                   <button className={s.button}>
+                   <button className={s.addButton}>
                        <Image src={"/plus-circle.svg"} alt={"add content"} width={16} height={16}/>
                    </button>
-                   <button className={s.button}>
+                   <button className={s.addButton}>
                        <Image src={"/external.svg"} alt={"add external content"} width={16} height={16}/>
                    </button>
-                   <button className={s.button}>
+                   <button className={s.addButton}>
                        <Image src={"/video.svg"} alt={"add video"} width={16} height={16}/>
                    </button>
                </div>}
