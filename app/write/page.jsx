@@ -12,7 +12,7 @@ const WritePage = () => {
     const [value, setValue] = useState("");
     return (
         <div className={s.container}>
-           <input type={"text"} placeholder={"Title"}/>
+           <input type={"text"} placeholder={"Title"} className={s.input}/>
            <div className={s.editor}>
               <button className={s.button} onClick={() => setOpen(!open)}>
                   <Image src={"/plus-circle.svg"} alt={"add content"} width={16} height={16}/>
@@ -29,8 +29,10 @@ const WritePage = () => {
                    </button>
                </div>
                )}
-               <ReactQuill theme={"bubble"} value={value} onChange={setValue} placeholder={"Tell your story..."}/>
+               <ReactQuill theme={"bubble"} value={value} onChange={setValue} placeholder={"Tell your story..."} className={s.textArea}
+               />
            </div>
+            <button className={s.publish}>Publish</button>
         </div>
     )
 }
