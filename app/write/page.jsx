@@ -15,7 +15,7 @@ const WritePage = () => {
            <input type={"text"} placeholder={"Title"} className={s.input}/>
            <div className={s.editor}>
               <button className={s.button} onClick={() => setOpen(!open)}>
-                  <Image src={"/plus-circle.svg"} alt={"add content"} width={16} height={16}/>
+                  <Image src={"/plus-circle.svg"} alt={""} width={16} height={16}/>
               </button>
                {open && (<div className={s.add}>
                    <button className={s.addButton}>
