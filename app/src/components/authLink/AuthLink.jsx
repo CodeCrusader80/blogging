@@ -3,6 +3,7 @@
 import React, {useState} from "react";
 import s from "./authLink.module.css";
 import Link from "next/link";
+import {signOut} from "next-auth/react";
 
 const AuthLink = () => {
 
@@ -11,10 +12,10 @@ const AuthLink = () => {
     const status = "notauthenticated"
     return (
         <>
-            {status==="notauthenticated" ? (<Link href={"/login"} className={s.link}>Login</Link>) : (
+            {status==="authenticated" ? (<Link href={"/login"} className={s.link}>Login</Link>) : (
                 <>
                     <Link href={"/write"} className={s.link}>Write</Link>
-                    <span className={s.link}>Logout</span>
+                    <span className={s.link} onClick={signOut}>Logout</span>
                 </>
             )}
             <div className={s.burger} onClick={() => setOpen(!open)}>
