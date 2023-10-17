@@ -5,6 +5,7 @@ import Footer from "@/app/src/components/footer/Footer";
 import {ThemeContextProvider} from "@/app/src/context/ThemeContext";
 import ThemeProvider from "@/app/src/components/providers/ThemeProvider";
 import {SessionProvider} from "next-auth/react";
+import AuthProvider from "@/app/src/components/providers/AuthProvider";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <SessionProvider>
+      <AuthProvider>
           <ThemeContextProvider>
               <ThemeProvider>
                   <div className={"container"}>
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
                   </div>
               </ThemeProvider>
           </ThemeContextProvider>
-      </SessionProvider>
+      </AuthProvider>
       </body>
     </html>
   )
