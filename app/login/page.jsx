@@ -6,7 +6,9 @@ const LoginPage = () => {
 
     const {data, status } = useSession();
 
-    console.log(data, status);
+    if(status === "loading") {
+        return <div className={s.loading}>Loading...</div>
+    }
     return (
         <div className={s.container}>
             <div className={s.wrapper}>
