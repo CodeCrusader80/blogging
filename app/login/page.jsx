@@ -9,6 +9,10 @@ const LoginPage = () => {
 
     const router = useRouter();
 
+    if(status === "loading") {
+        return <div className={s.loading}>Loading...</div>
+    }
+
     if(status === "authenticated") {
         router.push("/")
     }
