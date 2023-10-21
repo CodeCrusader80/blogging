@@ -2,35 +2,37 @@ import React from "react";
 import s from "./categorylist.module.css";
 import Link from "next/link";
 import Image from "next/image";
-const CategoryList = () => {
+
+const getData = async () => {
+    const res = await fetch("http://localhost:3000/api/categories", {
+        cache: "no-store",
+    });
+
+    if(!res.ok){
+        throw new Error("Failed")
+    }
+    return res.json()
+};
+const CategoryList = async () => {
+    const data = await getData();
     return(
         <div className={s.container}>
             <h1 className={s.title}>Popular Categories</h1>
             <div className={s.categories}>
-                <Link href={"/blog?cat=style"} className={`${s.category} ${s.style}`}>
-                    <Image src={"/lifestyle.png"} alt={"illustration style"} width={32} height={32} className={s.image}></Image>
-                    Style
+                {data?.map(item=>(
+                <Link
+                    href={"/blog?cat=style"}
+                    className={`${s.category} ${s[item.slug]}`}
+                    key={item._id}
+                >
+                    {item.img && (
+                        <Image
+                        src={item.img}
+                        alt={`illustration category ${item.title}`} width={32} height={32} className={s.image}/>
+                    )}
+                    {item.title}
                 </Link>
-                <Link href={"/blog?cat=fashion"} className={`${s.category} ${s.fashion}`}>
-                    <Image src={"/style.png"} alt={"illustration style"} width={32} height={32} className={s.image}></Image>
-                    Fashion
-                </Link>
-                <Link href={"/blog?cat=culture"} className={`${s.category} ${s.culture}`}>
-                    <Image src={"/culture.png"} alt={"illustration style"} width={32} height={32} className={s.image}></Image>
-                    Culture
-                </Link>
-                <Link href={"/blog?cat=food"} className={`${s.category} ${s.food}`}>
-                    <Image src={"/food.png"} alt={"illustration style"} width={32} height={32} className={s.image}></Image>
-                   Food
-                </Link>
-                <Link href={"/blog?cat=travel"} className={`${s.category} ${s.travel}`}>
-                    <Image src={"/travel.png"} alt={"illustration style"} width={32} height={32} className={s.image}></Image>
-                    Travel
-                </Link>
-                <Link href={"/blog?cat=programming"} className={`${s.category} ${s.programming}`}>
-                    <Image src={"/programming.png"} alt={"illustration style"} width={32} height={32} className={s.image}></Image>
-                    Code
-                </Link>
+                ))}
             </div>
         </div>
     )
