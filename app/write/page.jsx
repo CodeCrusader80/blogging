@@ -10,7 +10,7 @@ import {useRouter} from "next/navigation";
 
 const WritePage = () => {
 
-    const {data, status } = useSession();
+    const { status } = useSession();
 
     const router = useRouter();
 
