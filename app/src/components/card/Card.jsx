@@ -2,7 +2,7 @@ import s from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-const Card = ({key}) => {
+const Card = ({key, item}) => {
     return (
         <div className={s.container} key={key}>
             <div className={s.imgContainer}>
@@ -14,7 +14,7 @@ const Card = ({key}) => {
                     <span className={s.cat}>Code</span>
                 </div>
                 <Link href={"/page"}>
-                <h1 className={s.title}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                <h1 className={s.title}>{item.title}</h1>
                 </Link>
                 <p className={s.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque delectus, deserunt illo porro tenetur...</p>
                 <Link href={"/"} className={s.link}>Read More</Link>
