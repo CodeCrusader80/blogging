@@ -2,9 +2,9 @@ import s from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-const Card = () => {
+const Card = ({key}) => {
     return (
-        <div className={s.container}>
+        <div className={s.container} key={key}>
             <div className={s.imgContainer}>
                 <Image src={"/p2.png"} alt={"photo of a woman in a cyberpunk universe"} width={350} height={280} className={s.image}/>
             </div>
