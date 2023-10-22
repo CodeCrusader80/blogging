@@ -4,8 +4,8 @@ import Pagination from "@/app/src/components/pagination/Pagination";
 import Image from "next/image";
 import Card from "@/app/src/components/card/Card";
 
-const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/posts", {
+const getData = async (page) => {
+    const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
         cache: "no-store",
     });
 
@@ -14,9 +14,9 @@ const getData = async () => {
     }
     return res.json()
 };
-const CardList = async() => {
+const CardList = async({page}) => {
 
-    const data = await getData()
+    const data = await getData(page)
     return(
         <div className={s.container}>
             <h1 className={s.title}>Recent Posts</h1>

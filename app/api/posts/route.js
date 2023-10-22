@@ -1,7 +1,10 @@
 import {NextResponse} from "next/server";
 import prisma from "@/app/src/utils/connect";
 
-export const GET = async ()=> {
+export const GET = async (req)=> {
+
+    const POST_PER_PAGE = 2;
+
     try{
 
       const posts = await prisma.post.findMany()
