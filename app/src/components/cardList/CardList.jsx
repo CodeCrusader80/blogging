@@ -25,7 +25,7 @@ const CardList = async({page}) => {
                     <Card item={item} key={item._id}/>
                     ))}
             </div>
-        <Pagination/>
+        <Pagination page={page}/>
         </div>
     )
 }
