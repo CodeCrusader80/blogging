@@ -33,16 +33,13 @@ const SinglePage = async ({params}) => {
                         </div>
                     </div>
                 </div>
-                <div className={s.imgContainer}>
-                    <Image src={"/p3.png"} alt={""} fill className={s.img}/>
-                </div>
+                {data?.img && <div className={s.imgContainer}>
+                    <Image src={data?.img} alt={""} fill className={s.img}/>
+                </div>}
             </div>
             <div className={s.content}>
-                <div className={s.description}>
-                    <div className={s.post}>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut culpa cupiditate dolore doloremque earum eos esse harum hic in inventore, odit quasi quidem quis quod similique veniam veritatis vero!</p>
-                        <h5>Lorem ipsum dolor.</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eligendi officia porro quia ullam! Deleniti doloribus facere neque quia quibusdam quidem quo vel veniam voluptatum. Amet atque esse ex excepturi exercitationem explicabo, impedit in numquam odit perferendis quidem repellendus tenetur.</p>
+                <div className={s.post}>
+                    <div className={s.description} dangerouslySetInnerHTML={{__html:data?.desc}}/>
                     </div>
                     <div className={s.comment}>
                         <Comments/>
@@ -50,8 +47,7 @@ const SinglePage = async ({params}) => {
                 </div>
                 <Menu/>
             </div>
-        </div>
-    )
-}
+    );
+};
 
 export default SinglePage;
