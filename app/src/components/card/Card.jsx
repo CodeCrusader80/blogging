@@ -6,7 +6,7 @@ const Card = ({key, item}) => {
     return (
         <div className={s.container} key={key}>
             <div className={s.imgContainer}>
-                {item.img && <Image src={item.img} alt={"photo of a woman in a cyberpunk universe"} className={s.image}/>}
+                {item.img && <Image src={item.img} alt={"photo of a woman in a cyberpunk universe"} width={350} height={250} className={s.image}/>}
             </div>
             <div className={s.txtContainer}>
                 <div className={s.detail}>
