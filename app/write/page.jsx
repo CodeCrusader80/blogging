@@ -21,7 +21,7 @@ const WritePage = () => {
         return <div className={s.loading}>Loading...</div>
     }
 
-    if(status === "authenticated") {
+    if(status === "unauthenticated") {
         router.push("/")
     }
     return (
