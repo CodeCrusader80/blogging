@@ -3,9 +3,22 @@
 import s from "./comments.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import useSWR from "swr";
+import {useSession} from "next-auth/react";
 
-const Comments = () => {
-    const status = "authenticated"
+const fetcher = async (url) => {
+    const res = await fetch(url);
+    const data = await res.json();
+    if(!res.ok){
+        const error = new Error(data.message);
+        throw error;
+    }
+    return data
+};
+
+const Comments = ({postSlug}) => {
+    const status = useSession()
+    const {data,isLoading} = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher )
     return(
         <div className={s.container}>
             <h1 className={s.title}>Comments</h1>
@@ -20,52 +33,18 @@ const Comments = () => {
             )
             }
             <div className={s.comments}>
-                <div className={s.comment}>
+                {isLoading ? "loading" : data?.map((item) => (
+                    <div className={s.comment} key={item._id}>
                     <div className={s.user}>
-                        <Image src={"/p2.png"} alt={"user avatar"} width={50} height={50} className={s.image}/>
+                        {item?.user?.image && <Image src={item.user.image} alt={"user avatar"} width={50} height={50} className={s.image}/>}
                         <div className={s.userInfo}>
-                            <span className={s.username}>John Doe</span>
-                            <span className={s.date}>12/10/2023</span>
+                            <span className={s.username}>{item.username}</span>
+                            <span className={s.date}>{item.createAt}</span>
                         </div>
                     </div>
-                    <p className={s.com}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt doloremque error est, provident reprehenderit! A adipisci aperiam exercitationem vitae.</p>
+                    <p className={s.com}>{item.desc}</p>
                 </div>
-            </div>
-            <div className={s.comments}>
-                <div className={s.comment}>
-                    <div className={s.user}>
-                        <Image src={"/p2.png"} alt={"user avatar"} width={50} height={50} className={s.image}/>
-                        <div className={s.userInfo}>
-                            <span className={s.username}>John Doe</span>
-                            <span className={s.date}>12/10/2023</span>
-                        </div>
-                    </div>
-                    <p className={s.com}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt doloremque error est, provident reprehenderit! A adipisci aperiam exercitationem vitae.</p>
-                </div>
-            </div>
-            <div className={s.comments}>
-                <div className={s.comment}>
-                    <div className={s.user}>
-                        <Image src={"/p2.png"} alt={"user avatar"} width={50} height={50} className={s.image}/>
-                        <div className={s.userInfo}>
-                            <span className={s.username}>John Doe</span>
-                            <span className={s.date}>12/10/2023</span>
-                        </div>
-                    </div>
-                    <p className={s.com}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt doloremque error est, provident reprehenderit! A adipisci aperiam exercitationem vitae.</p>
-                </div>
-            </div>
-            <div className={s.comments}>
-                <div className={s.comment}>
-                    <div className={s.user}>
-                        <Image src={"/p2.png"} alt={"user avatar"} width={50} height={50} className={s.image}/>
-                        <div className={s.userInfo}>
-                            <span className={s.username}>John Doe</span>
-                            <span className={s.date}>12/10/2023</span>
-                        </div>
-                    </div>
-                    <p className={s.com}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt doloremque error est, provident reprehenderit! A adipisci aperiam exercitationem vitae.</p>
-                </div>
+                ))}
             </div>
         </div>
     )
