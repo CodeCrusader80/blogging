@@ -39,7 +39,6 @@ const WritePage = () => {
                            id={"image"} onChange={e=>setFile(e.target.files[0])}
                            style={{display:"none"}}
                        />
-
                        <button className={s.addButton}>
                            <label htmlFor={"image"}>
                                <Image src={"/image.svg"} alt={"add content"} width={16} height={16}/>
