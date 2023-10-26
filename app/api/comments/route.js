@@ -26,19 +26,21 @@ try {
 
 //CREATE A COMMENT
 export const POST = async (req)=> {
-    const session = getAuthSession();
-    const postSlug = searchParams.get("postSlug");
-    try {
+    const session = await getAuthSession();
 
-        const comments = await prisma.comment.findMany({
-            where: {
-                ...(postSlug && {postSlug}),
-            },
-            include: {user: true},
+    if(!session){
+        return new NextResponse(
+            JSON.stringify({message: "Not Authenticated"}, {status: 401})
+        )
+    }
+    try {
+        const body = await req.json()
+        const comment = await prisma.comment.create({
+           data: {...body, userEmail: session.user.email},
         });
 
 
-        return new NextResponse(JSON.stringify(comments, {status: 200}))
+        return new NextResponse(JSON.stringify(comment, {status: 200}))
 
     } catch (error) {
         console.log(error)
