@@ -14,6 +14,7 @@ const WritePage = () => {
 
     const router = useRouter();
 
+    const [file, setFile] = useState(null);
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState("");
 
@@ -31,17 +32,27 @@ const WritePage = () => {
               <button className={s.button} onClick={() => setOpen(!open)}>
                   <Image src={"/plus-circle.svg"} alt={""} width={16} height={16}/>
               </button>
-               {open && (<div className={s.add}>
-                   <button className={s.addButton}>
-                       <Image src={"/image.svg"} alt={"add content"} width={16} height={16}/>
-                   </button>
-                   <button className={s.addButton}>
-                       <Image src={"/external.svg"} alt={"add external content"} width={16} height={16}/>
-                   </button>
-                   <button className={s.addButton}>
-                       <Image src={"/video.svg"} alt={"add video"} width={16} height={16}/>
-                   </button>
-               </div>
+               {open && (
+                   <div className={s.add}>
+                       <input
+                           type={"file"}
+                           id={"image"} onChange={e=>setFile(e.target.files[0])}
+                           style={{display:"none"}}
+                       />
+
+                       <button className={s.addButton}>
+                           <label htmlFor={"image"}>
+                               <Image src={"/image.svg"} alt={"add content"} width={16} height={16}/>
+                           </label>
+                       </button>
+
+                       <button className={s.addButton}>
+                           <Image src={"/external.svg"} alt={"add external content"} width={16} height={16}/>
+                       </button>
+                       <button className={s.addButton}>
+                           <Image src={"/video.svg"} alt={"add video"} width={16} height={16}/>
+                       </button>
+                    </div>
                )}
                <ReactQuill theme={"bubble"} value={value} onChange={setValue} placeholder={"Tell your story..."} className={s.textArea}
                />
