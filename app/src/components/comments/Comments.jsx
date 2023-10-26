@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import s from "./comments.module.css";
 import Link from "next/link";
@@ -11,19 +11,18 @@ const fetcher = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     if(!res.ok){
-        const error = new Error(data.message);
-        throw error;
+        throw new Error(data.message);
     }
     return data
 };
 
 const Comments = ({postSlug}) => {
-    const status = useSession()
+    const {status} = useSession()
     const {data, mutate, isLoading} = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher );
 
     const [desc, setDesc] = useState("")
     const handleSubmit = async () => {
-        await fetch("api/comments", {
+        await fetch("/api/comments", {
             method: "POST",
             body: JSON.stringify({desc, postSlug}),
         });
@@ -33,7 +32,7 @@ const Comments = ({postSlug}) => {
     return(
         <div className={s.container}>
             <h1 className={s.title}>Comments</h1>
-            {status === "authenticated" ? (
+            { status === "authenticated" ? (
                     <div className={s.write}>
                         <textarea placeholder={"write a comment..."} className={s.input} onChange={e=>setDesc(e.target.value)}/>
                         <button className={s.button} onClick={handleSubmit}>Send</button>
