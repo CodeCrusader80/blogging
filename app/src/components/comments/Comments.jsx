@@ -1,3 +1,5 @@
+"use client"
+
 import s from "./comments.module.css";
 import Link from "next/link";
 import Image from "next/image";
