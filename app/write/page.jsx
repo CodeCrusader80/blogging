@@ -74,6 +74,7 @@ const WritePage = () => {
                 desc: value,
                 img: media,
                 slug: slugify(title),
+                catSlug: 'travel',
             })
         })
         console.log(res)
