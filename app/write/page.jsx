@@ -7,6 +7,12 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
 import {useSession} from "next-auth/react";
 import {useRouter} from "next/navigation";
+import {getStorage, ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
+import {app} from "../src/utils/firebase"
+import {error} from "next/dist/build/output/log";
+
+
+const storage = getStorage(app)
 
 const WritePage = () => {
 
@@ -20,9 +26,26 @@ const WritePage = () => {
 
     useEffect(() => {
         const upload = ()=> {
-
-        }
-        file && upload;
+            const storageRef = ref(storage, 'image/river.jpg');
+            const uploadTask = uploadBytesResumable(storageRef, file);
+            uploadTask.on('state_changed', (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                switch (snapshot.state) {
+                    case 'paused': console.log('Upload is paused');
+                        break;
+                    case 'running': console.log('Upload is running');
+                        break;
+                }
+            },
+                (error) => {},
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                        console.log('FIle available at', downloadURL);
+                    });
+                }
+            );
+        };
+        file && upload();
     }, [file]);
 
     if(status ==="loading") {
