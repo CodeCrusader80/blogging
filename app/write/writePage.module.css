@@ -47,7 +47,7 @@
 .publish {
    position: absolute;
     top: 30px;
-    right: 20px;
+    right: 10px;
     padding: 10px 20px;
     border: none;
     background-color: #1E3953;
@@ -56,3 +56,23 @@
     border-radius: 20px;
 }
 
+@media screen and (max-width: 900px) {
+    .publish{
+        top: 80px;
+        right: 35px;
+        z-index: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .button, .addButton{
+       width: 30px;
+       height: 28px;
+    }
+    .input {
+        font-size: 38px;
+    }
+    .textArea {
+        font-size: 30px;
+    }
+}
